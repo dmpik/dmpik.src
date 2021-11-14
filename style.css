@@ -1,0 +1,30 @@
+.p{
+  margin-left: 50px 0;
+}
+
+.q {
+  font-weight: bold;
+  border: 2px solid #dedede;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
+  margin-left: 10px 0;
+}
+.q:link {
+  background-color: #000;
+  cursor: pointer;
+}
+.q:visited {
+  background-color: #000;
+  cursor: pointer;
+}
+.q:hover {
+  background-color: #B5B5B5;
+  cursor: pointer;
+}
+.q:active {
+  background-color: #000;
+  cursor: pointer;
+}
+

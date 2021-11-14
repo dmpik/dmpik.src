@@ -5,10 +5,10 @@
 mkdir -p build
 mkdir -p .pre
 
-OPTS="--template=easy_template.html"
+OPTS="--template=template.html"
 
 for i in *.pre.md; do
-	sed 's/%id:\(.*\)%/<a name="\1"><\/a>/g' $i > .pre/${i%.pre.md}.md
+	sed 's/^>\(.*\)%id:\(.*\)%$/<div onClick="copyLink(this.id)" class="q" id="\2">\1<\/div>/' $i > .pre/${i%.pre.md}.md
 done
 
 for i in *..md; do
@@ -17,7 +17,9 @@ done
 
 for i in .pre/*.md; do
 	name=`basename $i`
-	pandoc ${OPTS} -i $i -o build/${name%.*}.html
+	pandoc -i $i -o build/${name%.*}.html --template=template.html
 done
+
+cp style.css script.js build
 
 rm -r .pre
